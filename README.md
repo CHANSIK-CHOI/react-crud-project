@@ -2,7 +2,7 @@
 
 ## 프로젝트 링크
 
-[https://chansik-choi.github.io/fetchApi/](https://chansik-choi.github.io/fetchApi/) 에서 배포된 결과물을 확인할 수 있습니다.
+[https://chansik-choi.github.io/user-management-dashboard/](https://chansik-choi.github.io/user-management-dashboard/) 에서 배포된 결과물을 확인할 수 있습니다.
 
 ## Intro
 
