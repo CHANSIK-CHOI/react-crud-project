@@ -13,6 +13,12 @@ import {
   type PayloadNewUser,
   type User,
 } from '@/types/users'
+import { getAvatarSrc } from '@/util/avatar'
+
+const normalizeUserAvatar = (user: User): User => ({
+  ...user,
+  avatar: getAvatarSrc(user.avatar),
+})
 
 export function useUsersQuery() {
   const [users, setUsers] = useState<User[]>([])
@@ -29,7 +35,7 @@ export function useUsersQuery() {
     setError('')
     try {
       const { data } = await getAllUsersApi()
-      setUsers(data)
+      setUsers(data.map(normalizeUserAvatar))
     } catch (err) {
       setErrorMessage(err, '유저 데이터를 받아올 수 없습니다.')
     } finally {
@@ -51,7 +57,7 @@ export function useUsersQuery() {
           first_name: rest.first_name,
           last_name: rest.last_name,
         }
-        setUsers((prev) => [newUser, ...prev])
+        setUsers((prev) => [normalizeUserAvatar(newUser), ...prev])
       } catch (err) {
         setErrorMessage(err, '유저 데이터를 추가할 수 없습니다.')
       }
@@ -72,10 +78,10 @@ export function useUsersQuery() {
         setUsers((prev) =>
           prev.map((user) =>
             user.id === id
-              ? {
+              ? normalizeUserAvatar({
                   ...user,
                   ...rest,
-                }
+                })
               : user,
           ),
         )
@@ -101,7 +107,7 @@ export function useUsersQuery() {
 
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { updatedAt, ...rest } = patched
-            return { ...user, ...rest }
+            return normalizeUserAvatar({ ...user, ...rest })
           })
         })
       } catch (err) {

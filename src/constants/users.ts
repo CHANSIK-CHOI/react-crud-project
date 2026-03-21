@@ -1,6 +1,6 @@
 import type { EditableUserKey, InitUserFormObject } from '@/types/users'
 
-export const PLACEHOLDER_SRC = 'https://placehold.co/100x100?text=Hello+World'
+export const PLACEHOLDER_SRC = `${import.meta.env.BASE_URL}avatar-placeholder.svg`
 
 export const INIT_NEW_USER_VALUE: InitUserFormObject = {
   email: '',
