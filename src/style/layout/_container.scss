@@ -148,6 +148,119 @@
   border: 1px solid var(--border);
 }
 
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2rem 2.2rem;
+}
+
+.stack__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.6rem;
+}
+
+.stack__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stack__subtitle {
+  margin-top: 0.5rem;
+  font-size: 1.35rem;
+  color: var(--muted);
+  max-width: 72rem;
+}
+
+.stack__summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
+
+.stack__summaryTag {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  background: rgba(11, 107, 111, 0.1);
+  border: 1px solid rgba(11, 107, 111, 0.18);
+}
+
+.stack__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stack__group {
+  flex: 1 1 30rem;
+  min-width: 0;
+  padding: 1.4rem 1.5rem;
+  border-radius: 1.8rem;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 245, 238, 0.92) 100%);
+}
+
+.stack__groupHeader {
+  margin-bottom: 1rem;
+}
+
+.stack__groupTitle {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stack__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.stack__item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(227, 221, 207, 0.9);
+}
+
+.stack__icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(227, 221, 207, 0.72);
+
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: block;
+  }
+}
+
+.stack__itemName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
 .loading {
   width: 9rem;
   height: 9rem;
@@ -207,6 +320,15 @@
     grid-template-columns: 1fr;
   }
 
+  .stack__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stack__summary {
+    justify-content: flex-start;
+  }
+
   .panel__header {
     flex-direction: column;
     align-items: flex-start;
@@ -224,5 +346,14 @@
 
   .panel {
     padding: 2rem;
+  }
+
+  .stack__group {
+    flex-basis: 100%;
+    padding: 1.2rem 1.3rem;
+  }
+
+  .stack__item {
+    padding: 0.75rem 0.95rem;
   }
 }

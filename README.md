@@ -32,8 +32,10 @@
 ## 기술 스택
 
 - Core: React, TypeScript, Vite
+- Form & Utility Libraries: React Hook Form, classnames
+- Data Handling: Fetch API, Context API, useReducer, useState
 - Styling: SCSS (Sass)
-- Linting: ESLint, Prettier
+- Code Quality: ESLint, Prettier
 
 ## 실행 방법
 
