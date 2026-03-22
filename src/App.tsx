@@ -46,6 +46,8 @@ const techGroups: TechGroup[] = [
   },
 ]
 
+const repositoryUrl = 'https://github.com/CHANSIK-CHOI/react-crud-project'
+
 function TechIcon({ name }: { name: TechIconName }) {
   switch (name) {
     case 'react':
@@ -122,9 +124,23 @@ function App() {
   return (
     <main className="page">
       <div className="layout-center">
+        <header className="project-header">
+          <div>
+            <span className="project-header__eyebrow">React CRUD Portfolio</span>
+            <strong className="project-header__title">react-crud-project</strong>
+          </div>
+          <a
+            className="button line project-header__link"
+            href={repositoryUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub 보기
+          </a>
+        </header>
+
         <section className="hero">
           <div className="hero__text">
-            <span className="hero__eyebrow">Personal Portfolio Project</span>
             <h1 className="hero__title">사용자 관리 CRUD 프로젝트</h1>
             <p className="hero__subtitle">
               React와 TypeScript, Fetch API를 기반으로 사용자 조회, 생성, 개별 및 일괄 수정, 삭제

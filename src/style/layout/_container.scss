@@ -18,6 +18,34 @@
   gap: 4.5rem;
 }
 
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.project-header__eyebrow {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.project-header__title {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.project-header__link {
+  flex: none;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
@@ -316,6 +344,11 @@
 }
 
 @media (max-width: 960px) {
+  .project-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
