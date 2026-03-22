@@ -1,6 +1,6 @@
 import { UsersContainer } from '@/features/users'
 
-type TechIconName = 'react' | 'reactHookForm' | 'classnames' | 'typescript' | 'vite' | 'sass'
+type TechIconName = 'react' | 'reactHookForm' | 'typescript' | 'vite' | 'sass'
 
 type TechItem = {
   name: string
@@ -26,11 +26,6 @@ const techGroups: TechGroup[] = [
         name: 'React Hook Form',
         description: '폼 상태 관리와 유효성 검사를 단순하게 유지하기 위해 사용했습니다.',
         icon: 'reactHookForm',
-      },
-      {
-        name: 'classnames',
-        description: '상태에 따라 조건부 클래스를 조합할 때 사용했습니다.',
-        icon: 'classnames',
       },
       {
         name: 'TypeScript',
@@ -83,22 +78,6 @@ function TechIcon({ name }: { name: TechIconName }) {
           />
           <circle cx="45" cy="40" r="7" fill="#fff" />
           <path d="m42 40 2 2 4-5" fill="none" stroke="#ff5fa2" strokeWidth="2.8" />
-        </svg>
-      )
-    case 'classnames':
-      return (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <rect x="8" y="8" width="48" height="48" rx="14" fill="#1b1e28" />
-          <rect x="15" y="15" width="34" height="34" rx="10" fill="#2d7ff9" opacity="0.9" />
-          <rect x="25" y="25" width="24" height="24" rx="8" fill="#0b6b6f" opacity="0.9" />
-          <path
-            d="M20 35c0-4 2.6-6.8 6.2-6.8 2.5 0 4.2.8 5.8 2.2l-2.7 3.1c-.9-.8-1.8-1.2-2.9-1.2-1.7 0-2.9 1.2-2.9 2.8s1.1 2.8 3 2.8c1.1 0 2-.4 2.8-1.1l2.7 3c-1.7 1.6-3.8 2.4-6 2.4-3.7 0-6-2.7-6-7.2Z"
-            fill="#fff"
-          />
-          <path
-            d="M35 35.2c0-4.3 2.6-7 6.1-7 3.6 0 6.2 2.7 6.2 7 0 4.4-2.6 7.1-6.2 7.1-3.5 0-6.1-2.7-6.1-7.1Zm8.7 0c0-1.8-1-3-2.6-3-1.5 0-2.5 1.2-2.5 3s1 3.1 2.5 3.1c1.6 0 2.6-1.3 2.6-3.1Z"
-            fill="#fff"
-          />
         </svg>
       )
     case 'typescript':
