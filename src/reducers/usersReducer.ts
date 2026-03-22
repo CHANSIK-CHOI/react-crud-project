@@ -1,7 +1,6 @@
 import { INIT_NEW_USER_VALUE } from '@/constants/users'
 import type { PayloadNewUser, User } from '@/types/users'
 
-// POST
 export type NewUserState = {
   isShowEditor: boolean
   isCreating: boolean
@@ -49,7 +48,6 @@ export function newUserReducer(state: NewUserState, action: NewUserAction) {
   }
 }
 
-// PATCH
 export type UserEditState = {
   isShowAllEditor: boolean
   isResetAllValue: boolean
@@ -163,7 +161,6 @@ export function userEditReducer(state: UserEditState, action: UserEditAction) {
   }
 }
 
-// DELETE
 export type UserDeleteState = {
   isShowDeleteCheckbox: boolean
   checkedIds: User['id'][]

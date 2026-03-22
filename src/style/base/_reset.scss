@@ -129,20 +129,18 @@ table {
 }
 
 button {
-  margin: 0; /* 99% */
-  padding: 0; /* 99% */
-  border: none; /* 99% */
-  background: none; /* 99% */
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
 
-  font: inherit; /* 부모 폰트 상속 → UI 통일 98% */
-  color: inherit; /* 글자색 상속 98% */
+  font: inherit;
+  color: inherit;
 
-  cursor: pointer; /* 버튼 느낌 유지 98% */
+  cursor: pointer;
 
-  /* 브라우저 기본 스타일 제거 */
-  appearance: none; /* 97% */
-  -webkit-appearance: none; /* 97% */
+  appearance: none;
+  -webkit-appearance: none;
 
-  /* 모바일 브라우저 터치 강조 제거 */
-  -webkit-tap-highlight-color: transparent; /* 97% */
+  -webkit-tap-highlight-color: transparent;
 }
