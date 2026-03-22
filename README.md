@@ -4,27 +4,30 @@
 
 [https://react-crud-project-five.vercel.app/](https://react-crud-project-five.vercel.app/) 에서 배포된 결과물을 확인할 수 있습니다.
 
-## Intro
+## 프로젝트 소개
 
-이 프로젝트는 React와 TypeScript를 활용한 사용자 관리 대시보드입니다.
-현재 버전은 fetch와 useState 기반의 CRUD 구현에 집중한 단계이며,
-[reqres.in](https://reqres.in/) Mock API를 활용하여 데이터를 관리합니다.
+이 프로젝트는 React, TypeScript, Fetch API를 활용해 구현한 개인 포트폴리오용 사용자 관리 대시보드입니다.
+사용자 목록 조회부터 생성, 개별 수정, 일괄 수정, 개별 삭제, 선택 삭제까지 CRUD 전 과정을 하나의 화면에서 다룰 수 있도록 구성했습니다.
+[reqres.in](https://reqres.in/) Mock API를 연동해 데이터를 관리하며, 로딩/에러 상태 처리, 폼 유효성 검사, 선택 기반 일괄 작업처럼 실제 프론트엔드에서 자주 마주치는 흐름을 직접 구현하는 데 초점을 맞췄습니다.
 
-추후 fetch + useState으로 구현된 CRUD를 tanstack의 useQuery, useMutation으로 리펙토링할 예정입니다.
+현재 버전은 fetch + useState 기반으로 데이터 흐름을 제어하고 있으며, 이후 TanStack Query의 `useQuery`, `useMutation` 기반 구조로 리팩터링할 계획입니다.
 
 ## 주요 기능
 
-1. 조회 (Read) : 사용자 목록 조회 및 로딩/에러 UI 처리
-2. 생성 (Create) : 신규 사용자 추가 (Form 상태의 지역화 및 유효성 검사)
-3. 수정 (Update) :
+- 조회 (Read): 사용자 목록을 불러오고 로딩/에러 상태를 UI에 반영합니다.
+- 생성 (Create): 신규 사용자 정보를 입력받아 유효성 검사 후 목록 상단에 추가합니다.
+- 개별 수정 (Update): 특정 사용자의 정보를 수정하고 결과를 즉시 화면에 반영합니다.
+- 일괄 수정 (Update): 여러 사용자를 한 번에 수정하고 응답 결과를 목록에 동기화합니다.
+- 개별 삭제 (Delete): 특정 사용자를 삭제하고 목록에서 즉시 제거합니다.
+- 선택 삭제 (Delete): 체크박스로 선택한 사용자들을 한 번에 삭제합니다.
 
-- 개별 수정 : 특정 사용자의 정보 수정
-- 일괄 수정 : 여러 사용자의 정보를 동시에 수정
+## 동작 방식
 
-4. 삭제 (Delete) :
-
-- 개별 삭제 : 특정 사용자 삭제
-- 일괄 삭제 : 체크박스를 통한 다중 선택 및 삭제
+- `UsersContainer`: 초기 렌더링 시 `getAllUsers()`를 호출하고, 로딩 상태와 에러 메시지를 화면에 제어합니다.
+- `useUsersQuery`: `getAllUsers`, `createUser`, `modifyUser`, `modifyAllUsers`, `deleteUser`, `deleteSelectedUsers` 함수를 통해 CRUD 요청과 사용자 목록 상태를 관리합니다.
+- `UsersProvider`: Context와 reducer를 사용해 생성 폼 상태, 수정 상태, 삭제 선택 상태를 분리 관리합니다.
+- `users.api.ts`: Fetch API 호출을 전담하며 `reqres.in` Mock API와 통신합니다.
+- `avatar` 유틸: 외부 아바타 URL을 프로젝트 내부 경로로 정규화해 일관된 이미지 로딩 흐름을 유지합니다.
 
 ## 기술 스택
 
@@ -75,11 +78,11 @@ src/
 └── main.tsx
 ```
 
-## 기술 블로그 (작업 기록)
+## 기술 블로그 (프로젝트 기록)
 
 프로젝트를 진행하며 마주친 문제와 해결 과정을 기술 블로그에 기록했습니다.
 
-- [시리즈](https://velog.io/@ckstlr0828/series/%EC%8B%A4%EC%8A%B5)
+- [프로젝트 시리즈](https://velog.io/@ckstlr0828/series/%EC%8B%A4%EC%8A%B5)
 - [GET : 초기 데이터 불러오기](https://velog.io/@ckstlr0828/CRUD1)
 - [POST : 데이터 추가하기](https://velog.io/@ckstlr0828/CRUD2)
 - [PATCH : 데이터 수정하기](https://velog.io/@ckstlr0828/CRUD3)

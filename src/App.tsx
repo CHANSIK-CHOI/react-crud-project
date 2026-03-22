@@ -6,26 +6,30 @@ function App() {
       <div className="layout-center">
         <section className="hero">
           <div className="hero__text">
-            <span className="hero__eyebrow">React CRUD Practice</span>
-            <h1 className="hero__title">Fetch API 실습</h1>
+            <span className="hero__eyebrow">Personal Portfolio Project</span>
+            <h1 className="hero__title">사용자 관리 CRUD 프로젝트</h1>
             <p className="hero__subtitle">
-              지금까지 배운 JavaScript & TypeScript를 활용해 사용자 데이터를 관리하고 CRUD를
-              구현합니다.
+              React와 TypeScript, Fetch API를 기반으로 사용자 조회, 생성, 개별 및 일괄 수정,
+              삭제 흐름을 구현한 개인 포트폴리오 프로젝트입니다.
             </p>
             <div className="hero__badges">
               <span className="badge">React</span>
               <span className="badge">TypeScript</span>
               <span className="badge">Fetch API</span>
+              <span className="badge">Portfolio</span>
             </div>
           </div>
           <div className="hero__card">
-            <span className="hero__cardLabel">Mock API</span>
-            <h2 className="hero__cardTitle">User Dashboard</h2>
-            <p className="hero__cardText">데이터 조회부터 생성, 수정, 삭제까지 한 화면에서 관리.</p>
+            <span className="hero__cardLabel">Mock API 기반 구현</span>
+            <h2 className="hero__cardTitle">User Management Dashboard</h2>
+            <p className="hero__cardText">
+              로딩, 에러 처리, 유효성 검사, 선택 기반 일괄 작업까지 한 화면에서 확인할 수
+              있습니다.
+            </p>
             <div className="hero__cardMeta">
-              <span>CRUD</span>
+              <span>CRUD Flow</span>
               <span>Validation</span>
-              <span>Batch Edit</span>
+              <span>Batch Actions</span>
             </div>
           </div>
         </section>
@@ -33,10 +37,14 @@ function App() {
         <section className="panel">
           <div className="panel__header">
             <div>
-              <h2 className="panel__title">Users</h2>
-              <p className="panel__subtitle">목록을 확인하고 필요한 작업을 수행하세요.</p>
+              <h2 className="panel__title">Users Dashboard</h2>
+              <p className="panel__subtitle">
+                사용자 목록을 확인하고 생성, 수정, 삭제 흐름을 직접 테스트할 수 있습니다.
+              </p>
             </div>
-            <div className="panel__hint">상단 액션에서 생성, 전체 수정, 삭제를 진행합니다.</div>
+            <div className="panel__hint">
+              상단 액션에서 신규 등록, 일괄 수정, 선택 삭제를 진행할 수 있습니다.
+            </div>
           </div>
           <UsersContainer />
         </section>
